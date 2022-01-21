@@ -4,13 +4,15 @@ const Rating = ({ value, text }) => {
   const makeStarArray = () => {
     const result = [];
     let val = value;
-    while (val > 1) {
+
+    while (val > 0.5) {
       result.push(1);
       val -= 1;
     }
     if (val === 0.5) {
       result.push(val);
     }
+
     return result;
   };
 
