@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
+import "./bootstrap.min.css";
 import "./App.css";
 
 const App = () => {
