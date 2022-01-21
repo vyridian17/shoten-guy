@@ -1,12 +1,15 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import commaNumber from "comma-number";
+import Rating from "./Rating";
+
+import "./product.css";
 
 const Product = ({ product }) => {
   return (
-    <Card className="my-3 p-3 rounded" border="dark">
+    <Card className="my-3 p-3 rounded card-frame" border="dark">
       <a href={`/product/${product._id}`}>
-        <Card.Img src={product.image} variant="top" />
+        <Card.Img className="card-image" src={product.image} variant="top" />
       </a>
 
       <Card.Body>
@@ -16,11 +19,12 @@ const Product = ({ product }) => {
           </Card.Title>
         </a>
         <Card.Text as="div">
-          <div className="my-3">
-            {product.rating} ({product.numReviews} reviews)
-          </div>
+          <Rating
+            value={product.rating}
+            text={`${product.numReviews} reviews`}
+          />
         </Card.Text>
-        <Card.Text as="h3">${commaNumber(product.price)}</Card.Text>
+        <Card.Text as="h5">${commaNumber(product.price)}</Card.Text>
       </Card.Body>
     </Card>
   );
