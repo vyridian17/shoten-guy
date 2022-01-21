@@ -1,6 +1,7 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-const Rating = ({ value, text }) => {
+const Rating = ({ value, text, color }) => {
   const makeStarArray = () => {
     const result = [];
     let val = value;
@@ -28,11 +29,25 @@ const Rating = ({ value, text }) => {
   return (
     <div className="my-3">
       {starArray.map((val) => {
-        return <i class={displayStars(val)}></i>;
+        return (
+          <span>
+            <i style={{ color }} class={displayStars(val)}></i>
+          </span>
+        );
       })}{" "}
-      ({text})
+      <span>({text && text})</span>
     </div>
   );
+};
+
+Rating.defaultProps = {
+  color: "#FFD700",
+};
+
+Rating.propTypes = {
+  value: PropTypes.number.isRequired,
+  text: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
 };
 
 export default Rating;
