@@ -7,14 +7,19 @@ import "./product.css";
 
 const Product = ({ product }) => {
   return (
-    <Card className="my-3 p-3 rounded card-frame" border="dark">
+    <Card className="my-3 p-3 rounded h-100" border="dark bold">
       <a href={`/product/${product._id}`}>
-        <Card.Img className="card-image" src={product.image} variant="top" />
+        <div className="my-3 p-1">
+          <Card.Img src={product.image} variant="top" />
+        </div>
       </a>
 
-      <Card.Body>
-        <a href={`/product/${product._id}`}>
-          <Card.Title a="div">
+      <Card.Body className="card-body">
+        <a
+          href={`/product/${product._id}`}
+          style={{ textDecoration: "none", color: "black" }}
+        >
+          <Card.Title as="div">
             <strong>{product.name}</strong>
           </Card.Title>
         </a>
@@ -24,7 +29,9 @@ const Product = ({ product }) => {
             text={`${product.numReviews} reviews`}
           />
         </Card.Text>
-        <Card.Text as="h5">${commaNumber(product.price)}</Card.Text>
+        <Card.Text className="price-text" as="h5">
+          ${commaNumber(product.price)}
+        </Card.Text>
       </Card.Body>
     </Card>
   );

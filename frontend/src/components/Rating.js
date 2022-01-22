@@ -27,7 +27,7 @@ const Rating = ({ value, text, color }) => {
   };
 
   return (
-    <div className="my-3">
+    <div className="rating my-3">
       {starArray.map((val) => {
         return (
           <span>
@@ -35,7 +35,7 @@ const Rating = ({ value, text, color }) => {
           </span>
         );
       })}{" "}
-      <span>({text && text})</span>
+      <span style={{ display: "inline-block" }}>({text && text})</span>
     </div>
   );
 };

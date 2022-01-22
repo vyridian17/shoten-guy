@@ -1,9 +1,14 @@
-.card-image {
-  width: 100%;
-  height: 15vw;
-  object-fit: cover;
-}
-
 .card-frame {
   display: flex;
+}
+
+.card-body {
+  align-items: flex-end;
+  text-decoration: none;
+  font-family: "Abel", sans-serif;
+}
+
+.price-text {
+  position: absolute;
+  bottom: 10%;
 }
