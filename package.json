@@ -1,5 +1,29 @@
 {
+  "name": "shoten-guy",
+  "version": "1.0.0",
+  "description": "Shoten-Guy Marketplace",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon ./backend/server.js",
+    "client": "npm start --prefix ./frontend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vyridian17/shoten-guy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vyridian17/shoten-guy/issues"
+  },
+  "homepage": "https://github.com/vyridian17/shoten-guy#readme",
   "dependencies": {
-    "comma-number": "^2.1.0"
+    "axios": "^0.25.0",
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "nodemon": "^2.0.15"
   }
 }

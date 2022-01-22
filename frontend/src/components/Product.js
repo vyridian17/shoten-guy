@@ -1,5 +1,6 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import commaNumber from "comma-number";
 import Rating from "./Rating";
 
@@ -8,21 +9,21 @@ import "./product.css";
 const Product = ({ product }) => {
   return (
     <Card className="my-3 p-3 rounded h-100" border="dark bold">
-      <a href={`/product/${product._id}`}>
+      <Link to={`/product/${product._id}`}>
         <div className="my-3 p-1">
           <Card.Img src={product.image} variant="top" />
         </div>
-      </a>
+      </Link>
 
       <Card.Body className="card-body">
-        <a
-          href={`/product/${product._id}`}
+        <Link
+          to={`/product/${product._id}`}
           style={{ textDecoration: "none", color: "black" }}
         >
           <Card.Title as="div">
             <strong>{product.name}</strong>
           </Card.Title>
-        </a>
+        </Link>
         <Card.Text as="div">
           <Rating
             value={product.rating}

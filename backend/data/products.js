@@ -2,20 +2,20 @@ const products = [
   {
     _id: "1",
     name: "Bear Wrapper Camper 2000",
-    image: "./images/camper.jpg",
+    image: "../images/camper.jpg",
     description:
       "Nice tow-along camper with beautiful nostalgic design. 45% guaranteed protection against bears.",
     brand: "Cample",
     category: "Outdoors",
     price: 12999.99,
-    countInStock: 3,
+    countInStock: 1,
     rating: 4,
     numReviews: 4,
   },
   {
     _id: "2",
     name: "Buzzzz Drone",
-    image: "./images/drone.jpg",
+    image: "../images/drone.jpg",
     description:
       "Be the bane of everyone at the beach with this noisy drone. Nature not dangerous enough without the risk of metal objects falling from the sky? Your solution is here. Attach a camera for extra intrusion into others' lives.",
     brand: "Airborn Invader",
@@ -27,8 +27,8 @@ const products = [
   },
   {
     _id: "3",
-    name: "Gutti Bag",
-    image: "./images/gucci-bag.jpg",
+    name: "Posh Fanny Pack",
+    image: "../images/gucci-bag.jpg",
     description:
       "It's not a bag. It's an investment. Be certain everyone knows you're a human of fine taste. Be really certain.",
     brand: "Gutti",
@@ -41,7 +41,7 @@ const products = [
   {
     _id: "4",
     name: "Really Nice Headphones",
-    image: "./images/headphones.jpg",
+    image: "../images/headphones.jpg",
     description:
       "'Dude, sure they look good, but the lows are too low and the mids are washed out.' - armchair sound technician after reading one article on headphones",
     brand: "Beats by Dru",
@@ -54,7 +54,7 @@ const products = [
   {
     _id: "5",
     name: "McBook Yo",
-    image: "./images/macbook-pro.jpg",
+    image: "../images/macbook-pro.jpg",
     description:
       "Never need to replace any internal parts ever again. Because you can't. You will use it how we made it and like it.",
     brand: "Ringo",
@@ -67,7 +67,7 @@ const products = [
   {
     _id: "6",
     name: "Tiny Yacht",
-    image: "./images/rc-yacht.jpg",
+    image: "../images/rc-yacht.jpg",
     description: "The closest you will ever get to a yacht.",
     brand: "BezMusk",
     category: "Boats",
@@ -78,4 +78,4 @@ const products = [
   },
 ];
 
-export default products;
+module.exports = products;
