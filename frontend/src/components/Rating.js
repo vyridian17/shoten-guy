@@ -28,10 +28,10 @@ const Rating = ({ value, text, color }) => {
 
   return (
     <div className="rating my-3">
-      {starArray.map((val) => {
+      {starArray.map((val, idx) => {
         return (
-          <span>
-            <i style={{ color }} class={displayStars(val)}></i>
+          <span key={idx}>
+            <i style={{ color }} className={displayStars(val)}></i>
           </span>
         );
       })}{" "}

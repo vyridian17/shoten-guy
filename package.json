@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "Shoten-Guy Marketplace",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon ./backend/server.js",
-    "client": "npm start --prefix ./frontend"
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -20,6 +22,7 @@
   "homepage": "https://github.com/vyridian17/shoten-guy#readme",
   "dependencies": {
     "axios": "^0.25.0",
+    "dotenv": "^14.2.0",
     "express": "^4.17.2"
   },
   "devDependencies": {

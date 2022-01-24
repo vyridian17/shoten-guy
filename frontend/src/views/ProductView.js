@@ -17,19 +17,16 @@ const ProductView = () => {
   const { id } = useParams();
 
   const [product, setProduct] = useState([]);
-  const [productImage, setProductImage] = useState("");
+  // const [productImage, setProductImage] = useState("");
 
   useEffect(() => {
     const fetchProduct = async () => {
       const { data } = await axios.get(`/api/products/${id}`);
-      setProductImage(data.image);
-      console.log(productImage);
+      // setProductImage(data.image);
       setProduct(data);
-
-      console.log("fetch");
     };
     fetchProduct();
-  }, [id]);
+  }, []);
 
   return (
     <>

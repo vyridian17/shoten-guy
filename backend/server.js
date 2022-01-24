@@ -1,13 +1,12 @@
-const express = require("express");
-const products = require("./data/products");
+import express from "express";
+import dotenv from "dotenv";
+import products from "./data/products.js";
+
+dotenv.config();
 
 const app = express();
 
 const PORT = process.env.PORT || 5000;
-
-app.get("/", (req, res) => {
-  res.send("Hello");
-});
 
 app.get("/api/products", (req, res) => {
   res.json(products);
@@ -18,4 +17,9 @@ app.get("/api/products/:id", (req, res) => {
   res.json(product);
 });
 
-app.listen(PORT, console.log(`Listening on http://localhost:${PORT}`));
+app.listen(
+  PORT,
+  console.log(
+    `Listening at http://localhost:${PORT} (mode: ${process.env.NODE_ENV})`
+  )
+);
