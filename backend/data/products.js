@@ -1,6 +1,5 @@
 const products = [
   {
-    _id: "1",
     name: "Bear Wrapper Camper 2000",
     image: "../images/camper.jpg",
     description:
@@ -13,7 +12,6 @@ const products = [
     numReviews: 4,
   },
   {
-    _id: "2",
     name: "Buzzzz Drone",
     image: "../images/drone.jpg",
     description:
@@ -26,7 +24,6 @@ const products = [
     numReviews: 1234,
   },
   {
-    _id: "3",
     name: "Posh Fanny Pack",
     image: "../images/gucci-bag.jpg",
     description:
@@ -39,7 +36,6 @@ const products = [
     numReviews: 2,
   },
   {
-    _id: "4",
     name: "Really Nice Headphones",
     image: "../images/headphones.jpg",
     description:
@@ -52,7 +48,6 @@ const products = [
     numReviews: 6,
   },
   {
-    _id: "5",
     name: "McBook Yo",
     image: "../images/macbook-pro.jpg",
     description:
@@ -65,7 +60,6 @@ const products = [
     numReviews: 1000,
   },
   {
-    _id: "6",
     name: "Tiny Yacht",
     image: "../images/rc-yacht.jpg",
     description: "The closest you will ever get to a yacht.",
