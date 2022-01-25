@@ -1,55 +1,59 @@
-import mongoose from "mongoose";
-import dotenv from "dotenv";
-import colors from "colors";
-import users from "./data/users.js";
-import products from "./data/products.js";
-import User from "./models/userModel.js";
-import Product from "./models/productModel.js";
-import Order from "./models/orderModel.js";
-import connectDB from "./config/db.js";
+// *******************************************************************
+// DO NOT RUN UNLESS YOU REALLY NEED TO DESTROY AND RE-SEED DB!!!!!!
+// *******************************************************************
 
-dotenv.config();
+// import mongoose from "mongoose";
+// import dotenv from "dotenv";
+// import colors from "colors";
+// import users from "./data/users.js";
+// import products from "./data/products.js";
+// import User from "./models/userModel.js";
+// import Product from "./models/productModel.js";
+// import Order from "./models/orderModel.js";
+// import connectDB from "./config/db.js";
 
-connectDB();
+// dotenv.config();
 
-const importData = async () => {
-  try {
-    await Order.deleteMany();
-    await Product.deleteMany();
-    await User.deleteMany();
+// connectDB();
 
-    const createdUsers = await User.insertMany(users);
-    const adminUser = createdUsers[0]._id;
-    const sampleProducts = products.map((product) => {
-      return { ...product, user: adminUser };
-    });
+// const importData = async () => {
+//   try {
+//     await Order.deleteMany();
+//     await Product.deleteMany();
+//     await User.deleteMany();
 
-    await Product.insertMany(sampleProducts);
+//     const createdUsers = await User.insertMany(users);
+//     const adminUser = createdUsers[0]._id;
+//     const sampleProducts = products.map((product) => {
+//       return { ...product, user: adminUser };
+//     });
 
-    console.log("Data Imported!".green.inverse);
-    process.exit();
-  } catch (err) {
-    console.log(`Error: ${err}`.red.inverse);
-    process.exit(1);
-  }
-};
+//     await Product.insertMany(sampleProducts);
 
-const destroyData = async () => {
-  try {
-    await Order.deleteMany();
-    await Product.deleteMany();
-    await User.deleteMany();
+//     console.log("Data Imported!".green.inverse);
+//     process.exit();
+//   } catch (err) {
+//     console.log(`Error: ${err}`.red.inverse);
+//     process.exit(1);
+//   }
+// };
 
-    console.log("Data Destroyed!".red.inverse);
-    process.exit();
-  } catch (err) {
-    console.log(`Error: ${err}`.red.inverse);
-    process.exit(1);
-  }
-};
+// const destroyData = async () => {
+//   try {
+//     await Order.deleteMany();
+//     await Product.deleteMany();
+//     await User.deleteMany();
 
-if (process.argv[2] === "-d") {
-  destroyData();
-} else {
-  importData();
-}
+//     console.log("Data Destroyed!".red.inverse);
+//     process.exit();
+//   } catch (err) {
+//     console.log(`Error: ${err}`.red.inverse);
+//     process.exit(1);
+//   }
+// };
+
+// if (process.argv[2] === "-d") {
+//   destroyData();
+// } else {
+//   importData();
+// }
