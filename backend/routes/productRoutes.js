@@ -20,7 +20,7 @@ router.get("/", async (_, res) => {
 router.get("/:id", async (req, res) => {
   if (mongoose.Types.ObjectId.isValid(req.params.id)) {
     const product = await Product.findById(req.params.id);
-    
+
     if (product) {
         res.json(product);
     } else {

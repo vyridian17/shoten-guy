@@ -10,10 +10,24 @@ connectDB();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-
-app.get('/', (req, res) => res.send(`Welcome to the API.`));
 app.use('/api/products', productRoutes);
 
+app.use((req, res, next) => {
+  const error = new Error(`Not Found: ${req.originalUrl}`);
+  res.status(404);
+  next(error);
+})
+
+app.use((err, req, res, next) => {
+  const statusCode = res.statusCode === 200 ? 500 : req.statusCode;
+  res.status(statusCode);
+  res.json({
+    message: err.message,
+    stack: process.env.NODE_ENV === 'production' ? null : err.stack,
+  })
+})
+
+app.get('/', (req, res) => res.send(`Welcome to the API.`));
 app.listen(
   PORT,
   console.log(
