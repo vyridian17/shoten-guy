@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import {
   Row,
@@ -26,7 +26,7 @@ const ProductView = () => {
       setProduct(data);
     };
     fetchProduct();
-  }, []);
+  }, [id]);
 
   return (
     <>
