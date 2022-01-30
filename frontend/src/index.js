@@ -1,12 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
+// Provider connects React-Redux to app
 import { Provider } from "react-redux";
 import store from './store'
 import "./index.css";
 import App from "./App";
 
 ReactDOM.render(
-  <Provider store = {store}>
+  <Provider store={store}>
     <App />
   </Provider>,
   document.getElementById("root")
