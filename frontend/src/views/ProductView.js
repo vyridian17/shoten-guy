@@ -9,6 +9,7 @@ import {
   Card,
   Button,
   Container,
+  Form
 } from "react-bootstrap";
 import Rating from "../components/Rating";
 import { listProductDetails } from "../actions/productActions";
@@ -18,11 +19,12 @@ import Message from '../components/Message';
 import commaNumber from "comma-number";
 
 const ProductView = () => {
+  const [qty, setQty] = useState(0);
   const dispatch = useDispatch();
   const { id } = useParams();
   const productDetails = useSelector(state => state.productDetails)
   const { loading, error, product } = productDetails;
-  // const [product, setProduct] = useState([]);
+  
   
   useEffect(() => {
     dispatch(listProductDetails(id));
@@ -78,7 +80,25 @@ const ProductView = () => {
                         : "Out of Stock"}
                     </Col>
                   </Row>
-                </ListGroup.Item>
+                    </ListGroup.Item>
+                    
+                    {product.countInStock > 0 && (
+                      <ListGroup.Item>
+                        <Row>
+                          <Col>Qty</Col>
+                          <Col>
+                            <Form.Control as='select' value={qty} onChange={(e) => setQty(e.target.value)}>
+                              {[...Array(product.countInStock).keys()].map(x => (
+                                <option key={x + 1} value={x + 1}>
+                                  {x + 1}
+                                </option>
+                              ))}
+                            </Form.Control>
+                          </Col>
+                        </Row>
+                      </ListGroup.Item>
+                    )}
+
                 <ListGroup.Item>
                   <Container style={{ textAlign: "center" }}>
                     <Button
