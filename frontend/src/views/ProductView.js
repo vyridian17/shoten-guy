@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams, useNavigate, Navigate } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import {
   Row,
   Col,
@@ -19,7 +19,7 @@ import Message from '../components/Message';
 import commaNumber from "comma-number";
 
 const ProductView = ({history}) => {
-  const [qty, setQty] = useState(0);
+  const [qty, setQty] = useState(1);
   const dispatch = useDispatch();
   const { id } = useParams();
   const productDetails = useSelector(state => state.productDetails)
