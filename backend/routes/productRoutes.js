@@ -13,7 +13,7 @@ router.get("/", async (_, res) => {
   res.json(products);
 });
 
-// @desc Fetch singl product
+// @desc Fetch single product
 // @route GET /api/products/:id
 // @access Public
 

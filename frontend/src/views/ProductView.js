@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate, Navigate } from "react-router-dom";
 import {
   Row,
   Col,
@@ -18,17 +18,22 @@ import Message from '../components/Message';
 
 import commaNumber from "comma-number";
 
-const ProductView = () => {
+const ProductView = ({history}) => {
   const [qty, setQty] = useState(0);
   const dispatch = useDispatch();
   const { id } = useParams();
   const productDetails = useSelector(state => state.productDetails)
   const { loading, error, product } = productDetails;
+  const navigate = useNavigate();
   
   
   useEffect(() => {
     dispatch(listProductDetails(id));
   }, [dispatch, id]);
+
+  const addToCartHandler = () => {
+    navigate(`/cart/${id}?qty=${qty}`);
+  }
 
   return (
     <>
@@ -101,7 +106,8 @@ const ProductView = () => {
 
                 <ListGroup.Item>
                   <Container style={{ textAlign: "center" }}>
-                    <Button
+                        <Button
+                          onClick={addToCartHandler}
                       className="btn text-center"
                       type="button"
                       disabled={product.countInStock === 0}
