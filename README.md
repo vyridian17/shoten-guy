@@ -14,7 +14,7 @@ Your .env file will contain:
 ```md
 NODE_ENV=development
 PORT=5000
-MONGO_URI=<<mongo db connect string>
+MONGO_URI=<<mongo db connect string>>
 ```
 
 `npm i` in both root and front-end

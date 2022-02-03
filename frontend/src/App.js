@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HomeView from "./views/HomeView";
 import ProductView from "./views/ProductView";
+import CartScreen from "./views/CartScreen";
 
 import "./bootstrap.min.css";
 import "./App.css";
@@ -18,6 +19,11 @@ const App = () => {
           <Routes>
             <Route path="/" element={<HomeView />} />
             <Route path="/product/:id" element={<ProductView />} />
+            <Route path="/cart/">
+              <Route path=":id" element={<CartScreen />} />
+              <Route path="" element={<CartScreen />}/>
+            </Route>
+            
           </Routes>
         </Container>
       </main>
