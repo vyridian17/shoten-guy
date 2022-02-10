@@ -1,8 +1,6 @@
 import Product from '../models/productModel.js'
 import mongoose from 'mongoose';
 
-
-
 // @desc Fetch all products
 // @route GET /api/products
 // @access Public
