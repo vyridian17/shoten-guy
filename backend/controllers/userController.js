@@ -26,6 +26,15 @@ const authUser = async (req, res) => {
   }
 }
 
+// @desc Get user profile
+// @route GET /api/users/profile
+// @access Private
+
+const getUserProfile = async (req, res) => {
+  res.send('Success');
+}
+
 export {
-  authUser
+  authUser,
+  getUserProfile
 }
