@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import HomeView from "./views/HomeView";
 import ProductView from "./views/ProductView";
 import CartScreen from "./views/CartScreen";
+import LoginScreen from "./views/LoginScreen";
 
 import "./bootstrap.min.css";
 import "./App.css";
@@ -17,6 +18,7 @@ const App = () => {
       <main className="py-3">
         <Container>
           <Routes>
+            <Route path="/login" element={<LoginScreen />}/>
             <Route path="/" element={<HomeView />} />
             <Route path="/product/:id" element={<ProductView />} />
             <Route path="/cart/">
